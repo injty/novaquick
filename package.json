@@ -2,11 +2,10 @@
   "name": "novaquick",
   "displayName": "novaquick",
   "description": "Quickly show the list of all open files in the current workspace.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.80.0"
   },
-  "icon": "src/vscode-quick-pick-file-extention.png",
   "activationEvents": [],
   "publisher": "injty",
   "repository": {
@@ -16,6 +15,7 @@
   "categories": [
     "Other"
   ],
+  "icon": "src/vscode-quick-pick-file-extention.png",
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
