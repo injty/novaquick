@@ -1,0 +1,60 @@
+{
+  "name": "novaquick",
+  "displayName": "novaquick",
+  "description": "Quickly show the list of all open files in the current workspace.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "icon": "src/vscode-quick-pick-file-extention.png",
+  "activationEvents": [],
+  "publisher": "injty",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/injty/novaquick.git"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "openedFiles.show",
+        "title": "Show Opened Files",
+        "category": "NovaQuick"
+      },
+      {
+        "command": "novaquick.showOpenedFiles",
+        "title": "NovaQuick: Show Opened Files",
+        "category": "NovaQuick"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "openedFiles.show",
+        "key": "ctrl+shift+h",
+        "mac": "cmd+shift+h",
+        "when": "editorTextFocus || !inputFocus"
+      },
+      {
+        "command": "novaquick.showOpenedFiles",
+        "key": "ctrl+alt+h",
+        "mac": "cmd+alt+h"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "npx vsce package",
+    "install-local": "npm run package && code --install-extension novaquick-0.0.1.vsix"
+  },
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0",
+    "vsce": "^2.15.0"
+  }
+}
